@@ -1,0 +1,303 @@
+// Start Style The Website Header
+header {
+  .top-bar {
+    position: relative;
+
+    .top-bar-container {
+      padding: 15px;
+      background-color: $black;
+      border-radius: 0 0 8px 8px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease-in-out;
+
+      &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: calc(100% - 30px);
+        z-index: 9;
+        margin: 0 15px;
+
+        @media (min-width: 576px) {
+          left: auto;
+          width: 100%;
+          margin: 0;
+          max-width: 510px;
+        }
+
+        @media (min-width: 768px) {
+          max-width: 690px;
+        }
+
+        @media (min-width: 992px) {
+          max-width: 930px;
+        }
+
+        @media (min-width: 1200px) {
+          max-width: 1110px;
+        }
+      }
+
+      .logo {
+        flex-basis: 82%;
+
+        a {
+          color: $white;
+
+          font: {
+            size: 20px;
+            weight: 700;
+          }
+
+          span {
+            margin-left: 10px;
+          }
+        }
+
+        @media (min-width: 768px) {
+          flex-basis: 60%;
+        }
+
+        @media (min-width: 992px) {
+          flex-basis: 30%;
+        }
+      }
+
+      nav {
+        display: none;
+        flex-basis: 100%;
+        order: 4;
+
+        font: {
+          size: 14px;
+          weight: 700;
+        }
+
+        .nav-bar {
+          .nav-bar-item {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 10px;
+            cursor: pointer;
+            &.black{
+              background-color: $dark-black;
+            }
+            &:hover {
+              background-color: $dark-black;
+
+              @media (min-width: 992px) {
+                border-radius: 5px;
+              }
+            }
+
+            a {
+              color: $white;
+
+              &.drop-down-link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .drop-down-icon {
+                  font-size: 20px;
+
+                  @media (min-width: 992px) {
+                    margin: -5px 0 0 5px;
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+
+            .drop-down-list {
+              display: none;
+              padding: 0 10px;
+
+              li {
+                padding: 10px 0;
+                cursor: pointer;
+                &:not(:last-of-type){
+                  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                  @media (min-width: 992px) {
+                    border-bottom:none;
+                  }
+                }
+                &:hover {
+                  background-color: $black;
+                  @media (min-width: 992px) {
+                    background-color: $dark-black;
+                  }
+                }
+
+                a {
+                  @media (min-width: 992px) {
+                    color: $gray;
+                  }
+
+                  &:hover {
+                    @media (min-width: 992px) {
+                      color: $white;
+                    }
+                  }
+                }
+
+                @media (min-width: 992px) {
+                  padding: 5px;
+                }
+              }
+
+              &.level3 {
+                @media (min-width: 992px) {
+                  display: none !important;
+                  bottom: -25px;
+                  left: 220px;
+                  width: 175px;
+                }
+              }
+
+              &.pages {
+                .pages-item {
+                  &:hover {
+                    .level3 {
+                      @media (min-width: 992px) {
+                        display: block !important;
+                      }
+                    }
+                  }
+                }
+
+                @media (min-width: 992px) {
+                  width: 250px;
+                }
+              }
+
+              @media (min-width: 992px) {
+                position: absolute;
+                left: 0;
+                background-color: $dark-black;
+                padding: 10px;
+                border-radius: 5px;
+                width: 200px;
+                z-index: 5;
+              }
+            }
+
+            @media (min-width: 992px) {
+              border-top: none;
+              padding: 10px;
+              position: relative;
+            }
+
+            &:hover {
+              .drop-down-list {
+                @media (min-width: 992px) {
+                  display: block;
+                }
+              }
+            }
+          }
+
+          @media (min-width: 992px) {
+            display: flex;
+          }
+
+          @media (min-width: 1200px) {
+            justify-content: space-between;
+          }
+        }
+
+        @media (min-width: 768px) {
+          margin-top: 20px;
+        }
+
+        @media (min-width: 992px) {
+          margin-top: 0;
+          display: block;
+          order: 0;
+          flex-basis: 45%;
+          font-size: 12.5px;
+        }
+
+        @media (min-width: 1200px) {
+          flex-basis: 40%;
+        }
+      }
+
+      .mobile-btn {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        z-index: 3;
+        height: 30px;
+        width: 40px;
+        padding: 8px 10px;
+        border-radius: 5px;
+        background-color: $dark-green;
+
+        .line {
+          height: 2px;
+          width: 100%;
+          transition: all 0.3s ease-in-out;
+          background-color: $white;
+        }
+
+        @media (min-width: 992px) {
+          display: none;
+        }
+      }
+
+      .close-sign {
+        justify-content: center;
+
+        .line {
+          &:first-of-type {
+            transform: rotate(45deg) translate(2px, 1px);
+          }
+
+          &:nth-of-type(2) {
+            transform: rotate(-45deg);
+          }
+
+          &:last-of-type {
+            display: none;
+          }
+        }
+      }
+
+      .head-form {
+        width: fit-content;
+        margin: 20px 0;
+        display: none;
+
+        .green-button {
+          margin-right: 10px;
+        }
+
+        @media (min-width: 768px) {
+          flex-basis: 25%;
+          display: block;
+          margin: 0;
+        }
+
+        @media (min-width: 992px) {
+          flex-basis: 20%;
+        }
+      }
+
+      @media (min-width: 768px) {
+        justify-content: space-between;
+        padding: 13.4px;
+      }
+
+      @media (min-width: 992px) {
+        padding: 12.8px;
+      }
+    }
+  }
+}
+
+// Finish Style The Website Header

@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name='description' content='Buddy – Multi-purpose WordPress &amp; BuddyPress Theme')
+    title Buddy – Multi-purpose WordPress &amp; BuddyPress Theme
+    link(rel='stylesheet' href='css/swiper-bundle.min.css')
+    link(rel='stylesheet' href='css/all.min.css')
+    link(rel='stylesheet' href='css/main.css')
+  body
+    include helpers/mixin
+    include pages/header.pug
+    include pages/home.pug
+    include pages/global.pug
+    include pages/footer.pug
+
+    script(src='js/jquery-3.5.1.min.js')
+    script(src='js/swiper-bundle.min.js')
+    script(src='js/all.min.js')
+    script(src='js/main.js')
